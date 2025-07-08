@@ -1,0 +1,130 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* Success Message *@
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["Message"]
+    </div>
+}
+
+@* Hero Banner *@
+<div class="hero-image-wrapper">
+    <img src="~/images/hero-image.jpg" alt="Inside Stilly Café" class="hero-image" />
+    <div class="hero-overlay-text">
+        <h1 class="display-4 text-white">Welcome to Stilly Café</h1>
+        <p>Craft coffee. Cozy vibes. Open daily from 6 AM to 6 PM.</p>
+    </div>
+</div>
+
+@* Main Content *@
+<div class="mt-5">
+    <div class="row text-center">
+        <div class="col-md-12 mb-4">
+            <h2>Savor the Experience</h2>
+            <h4>Locally crafted coffee, tea, and fresh baked goods made with care and creativity.</h4>
+        </div>
+    </div>
+
+    @* Coffee/Drinks *@
+    <h2 class="text-center mt-5 mb-4">Poured to Perfection</h2>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <img src="~/images/latte-art.jpg" class="img-fluid" alt="Barista creating latte art with steamed milk">
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/iced-coffee.jpg" class="img-fluid" alt="Iced coffee in a mason jar on a wooden table">
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/matcha.jpg" class="img-fluid" alt="Bright green matcha latte in a ceramic cup">
+        </div>
+    </div>
+
+    @* Pastries & Baked Goods *@
+    <h2 class="text-center mt-5 mb-4">Made Fresh, Served with Love</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/images/Pastry1.jpg" class="img-fluid" alt="Assorted cupcakes on a vintage cake stand">
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/panini.jpg" class="img-fluid" alt="Toasted panini sandwich on a wooden board">
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/sourdough.jpg" class="img-fluid" alt="Loaf of sourdough on a linen cloth with knife">
+        </div>
+    </div>
+
+    @* Community Aspect *@
+    <h2 class="text-center mt-5 mb-4">Where Community Brews</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/images/laptop-and-coffee.jpg" class="img-fluid" alt="Cup of coffee next to a book and laptop">
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/friends-coffee.jpg" class="img-fluid" alt="Two friends smiling with coffee cups in hand">
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/barista-pouring.jpg" class="img-fluid" alt="Barista pulling espresso shot from machine">
+        </div>
+    </div>
+
+    @* Contact Information *@
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 text-center contact-info">
+            <h2>Come Say Hi!</h2>
+            <p>123 S Washington Street, Stillwater, OK 74074</p>
+            <p>E-Mail: <a href="mailto:info@stillycafe.com">info@stillycafe.com</a></p>
+            <p>Phone Number: (405) 555-1234</p>
+        </div>
+    </div>
+
+    @* Mailing List Form *@
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Join Our Mailing List</h2>
+
+            <form method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="MailingList.Name" class="form-label"></label>
+                    <input asp-for="MailingList.Name" class="form-control" />
+                    <span asp-validation-for="MailingList.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="MailingList.Email" class="form-label"></label>
+                    <input asp-for="MailingList.Email" class="form-control" />
+                    <span asp-validation-for="MailingList.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="MailingList.ReferralSource" class="form-label">How did you hear about us?</label>
+                    <select asp-for="MailingList.ReferralSource" class="form-control">
+                        <option value="">-- Please select --</option>
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                        <option>Google</option>
+                        <option>Noticed the café while passing by</option>
+                        <option>Recommendation from a friend</option>
+                        <option>Other</option>
+                    </select>
+                    <span asp-validation-for="MailingList.ReferralSource" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+            </form>
+        </div>
+
+    @* Logo *@
+    <div class="text-center mt-5">
+        <img src="~/images/logo.png" alt="Stilly Café Logo" class="logo-img">
+    </div>
+
+        @* 405 Arabica Banner *@
+        <div class="text-center mt-5 mb-4">
+            <img src="~/images/405 Arabica Banner.jpg" alt="405 Arabica - From our home to yours" class="arabica-banner" />
+            <p class="mt-2">Established 2022 - From our home to yours</p>
+        </div>
